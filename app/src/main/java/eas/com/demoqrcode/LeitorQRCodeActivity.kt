@@ -80,6 +80,8 @@ class LeitorQRCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandler
                 if (grantResults.size == 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "Permissao negada", Toast.LENGTH_SHORT).show()
                 } else {
+                    mScannerView.setResultHandler(this)
+                    mScannerView.startCamera()
                 }
                 return
             }
